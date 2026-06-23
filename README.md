@@ -1,90 +1,237 @@
-🎓 AI Powered Study Buddy
-An interactive web application built with Streamlit to help students with their learning and productivity. This tool leverages the high-speed Groq API with the Llama 3.1 model to provide a suite of powerful study aids, from explaining complex topics to generating quizzes from your own documents.
+# 🎓 AI Powered Study Buddy
 
-✨ Features
-This application is organized into five main tabs, each packed with useful features:
+## Overview
 
-📝 Study Tools
-Explain a Complex Topic: Get simple, easy-to-understand explanations for any topic.
-Summarize Your Notes: Paste in long-form notes and get a concise, bulleted summary of the key points.
-Generate Interactive Quizzes: Create multiple-choice quizzes from your notes with adjustable difficulty levels.
-Generate Flashcards: Instantly create digital flashcards (front and back) from your study materials and review them in an interactive viewer.
+AI Powered Study Buddy is an AI-driven learning assistant designed to help students improve their study efficiency, understanding, and productivity. Built using Streamlit and powered by the Groq API with the Llama 3.1 model, the application provides intelligent study support through topic explanations, note summarization, quiz generation, flashcards, writing assistance, study planning, and document-based question answering.
 
-✍️ Writing Assistant
-Essay & Paragraph Helper: Get help with your writing assignments. The assistant can:
-Generate a structured outline.
-Draft a paragraph on a specific topic.
-Suggest improvements to your writing style.
+The platform combines Generative AI and interactive learning tools to create a personalized and engaging study experience.
 
-🗓️ Planner & Visualizer
-Study Schedule Planner: Input your subjects, exam dates, and available times to generate a balanced and effective study schedule.
-Concept Visualizer: Enter a topic to generate a mind map outline, helping you visualize connections between different concepts.
+---
 
-💬 Chat with Your Documents
-Upload & Chat: Upload a PDF document (lecture notes, textbook chapters, research papers) and ask questions directly about its content.
-Quiz from Document: Ask the assistant to generate a quiz based on the content of your uploaded PDF.
+## Features
 
-📜 Activity History
-Persistent Log: All your activities are saved locally. You can review past explanations, summaries, quizzes, and more.
-Manage Your History: View the details of any past activity or delete entries you no longer need.
+### 📝 Study Tools
 
-🛠️ Tech Stack
-Framework: Streamlit - For building the interactive web interface.
-Language: Python 3.11+
-AI/LLM Provider: Groq API - For incredibly fast AI model inference.
-Model: Llama 3.1 (llama-3.1-8b-instant)
-PDF Processing: PyPDF2
+#### Explain Complex Topics
 
-🚀 Getting Started
-Follow these instructions to set up and run the project on your local machine.
-1. Prerequisites
-Python 3.11 or higher installed.
-A free API key from Groq.
-2. Installation & Setup
-1. Clone the repository:
-code
-Bash
-git clone https://github.com/your-username/ai-study-buddy.git
-cd ai-study-buddy
-2. Create and activate a virtual environment:
-This is a best practice to keep project dependencies isolated.
-On Windows:
-code
-Bash
-python -m venv venv
-.\venv\Scripts\activate
-On macOS & Linux:
-code
-Bash
-python3 -m venv venv
-source venv/bin/activate
-3. Install the required libraries:
-code
-Bash
+* Simplifies difficult concepts into easy-to-understand explanations.
+* Suitable for quick learning and revision.
+
+#### Note Summarization
+
+* Converts lengthy notes into concise summaries.
+* Highlights key concepts and important points.
+
+#### Quiz Generator
+
+* Generates multiple-choice quizzes from study notes.
+* Supports adjustable difficulty levels.
+
+#### Flashcard Generator
+
+* Creates AI-generated flashcards from educational content.
+* Interactive review mode for self-assessment.
+
+---
+
+### ✍️ Writing Assistant
+
+#### Essay & Paragraph Helper
+
+* Generates structured essay outlines.
+* Drafts paragraphs on selected topics.
+* Suggests writing improvements and refinements.
+
+---
+
+### 🗓️ Planner & Visualizer
+
+#### Study Schedule Planner
+
+* Creates personalized study schedules.
+* Considers subjects, exam dates, and available study hours.
+
+#### Concept Visualizer
+
+* Generates mind-map style outlines.
+* Helps visualize relationships between concepts.
+
+---
+
+### 💬 Chat with Documents
+
+#### PDF Question Answering
+
+* Upload PDF documents.
+* Ask questions directly from document content.
+
+#### Quiz from Documents
+
+* Automatically generates quizzes from uploaded PDFs.
+
+---
+
+### 📜 Activity History
+
+* Stores previous activities locally.
+* Review past summaries, quizzes, flashcards, and explanations.
+* Delete unwanted records when needed.
+
+---
+
+## Technologies Used
+
+### Programming Language
+
+* Python 3.11+
+
+### Framework
+
+* Streamlit
+
+### AI & Generative AI
+
+* Groq API
+* Llama 3.1 (llama-3.1-8b-instant)
+
+### Libraries
+
+* PyPDF2
+* JSON
+* Datetime
+* OS
+
+---
+
+## System Architecture
+
+```text
+User Input
+     │
+     ▼
+ Streamlit Interface
+     │
+     ▼
+ Groq API (Llama 3.1)
+     │
+     ▼
+ AI Processing
+     │
+ ┌───┼───────────────┐
+ │   │               │
+ ▼   ▼               ▼
+Summaries   Quizzes   Flashcards
+ │
+ ▼
+ Results Display
+```
+
+---
+
+## Project Features at a Glance
+
+✅ Topic Explanation
+
+✅ Note Summarization
+
+✅ Quiz Generation
+
+✅ Flashcard Creation
+
+✅ Writing Assistance
+
+✅ Study Planning
+
+✅ Concept Visualization
+
+✅ PDF Question Answering
+
+✅ Activity History Tracking
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/AI-Powered-Study-Buddy.git
+cd AI-Powered-Study-Buddy
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-3. Configuration
-The application requires an API key to connect to the Groq service.
-1. Create the secrets file:
-Create a folder named .streamlit in the root of your project directory.
-Inside the .streamlit folder, create a file named secrets.toml.
-2. Add your API key to the file:
-Open secrets.toml and add your Groq API key in the following format:
-code
-Toml
-GROQ_API_KEY = "gsk_YourSecretGroqApiKeyHere"
+```
 
-4. Running the Application
-Once the setup and configuration are complete, you can run the app with a single command:
-code
-Bash
+### Configure API Key
+
+Create:
+
+```text
+.streamlit/secrets.toml
+```
+
+Add:
+
+```toml
+GROQ_API_KEY="your_api_key_here"
+```
+
+### Run Application
+
+```bash
 python -m streamlit run app.py
-Your web browser should automatically open to the application's local URL.
-📁 Project Structure
-code
-Code
-AI-Study-Buddy/
-├── .streamlit/
-│   └── secrets.toml      # Your secret API key (you create this)
-├── app.py                # The main Streamlit application script
-├── requirements.txt      # A list of all Python dependencies
-└── README.md             # This file
+```
+
+---
+
+## Learning Outcomes
+
+This project helped develop practical skills in:
+
+* Generative AI
+* Prompt Engineering
+* Large Language Models (LLMs)
+* Streamlit Development
+* API Integration
+* Natural Language Processing
+* Educational Technology Solutions
+* User Interface Design
+
+---
+
+## Future Enhancements
+
+* User Authentication
+* Cloud Deployment
+* Voice-Based Learning Assistant
+* Personalized Learning Analytics
+* Multi-Language Support
+* Progress Tracking Dashboard
+
+---
+
+## Author
+
+**Arun H**
+
+B.E. Computer Science Engineering
+ACS College of Engineering
+
+### Skills Demonstrated
+
+* Python
+* Generative AI
+* Prompt Engineering
+* LLM Integration
+* Streamlit
+* Groq API
+* NLP
+* PDF Processing
+* AI Application Development
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
